@@ -23,7 +23,7 @@ jobs:
     - name: Install Dependencies and Git Pull
       run: |
         git pull https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ethanpvr18/EthanPervereDesign_Contact.git
-        python -m pip install flask flask_cors
+        python -m pip install flask flask_cors flask_limiter dotenv
     - name: Run Contact Form
       run: |
         python app.py
