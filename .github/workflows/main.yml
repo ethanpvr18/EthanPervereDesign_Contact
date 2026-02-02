@@ -27,6 +27,3 @@ jobs:
     - name: Run Contact Form
       run: |
         python app.py
-    - name: Open Cloudflare Tunnel
-      run: |
-        cloudflared tunnel run 25bae543-d73f-494e-9cc1-560c509a219c
