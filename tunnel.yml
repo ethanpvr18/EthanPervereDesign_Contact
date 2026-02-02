@@ -1,0 +1,21 @@
+name: Run Cloudflare Tunnel
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Open Cloudflare Tunnel
+      run: |
+        cloudflared tunnel run 25bae543-d73f-494e-9cc1-560c509a219c
