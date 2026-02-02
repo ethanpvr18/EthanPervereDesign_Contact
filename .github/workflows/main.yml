@@ -1,0 +1,29 @@
+name: Run Ethan Pervere Design Contact Form
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+    - name: Install Dependencies and Git Pull
+      run: |
+        git pull https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ethanpvr18/EthanPervereDesign_Contact.git
+        python -m pip install 
+    - name: Flask App
+      run: |
+        echo "python .py"
