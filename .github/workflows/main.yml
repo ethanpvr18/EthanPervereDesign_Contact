@@ -25,9 +25,7 @@ jobs:
         git pull https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ethanpvr18/EthanPervereDesign_Contact.git
     - name: Run Contact Form
       run: |
-        source venv/bin/activate
-        export FLASK_APP=app.py
-        flask run
+        python app.py
     - name: Open Cloudflare Tunnel
       run: |
         cloudflared tunnel run 25bae543-d73f-494e-9cc1-560c509a219c
